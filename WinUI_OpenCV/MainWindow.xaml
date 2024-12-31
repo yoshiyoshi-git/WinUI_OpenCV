@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="WinUI_OpenCV.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinUI_OpenCV"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="WinUI_OpenCV">
+
+    <Grid RequestedTheme="Default" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <MenuBar x:Name="_menuBar" Background="LightGray" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+
+                <MenuBarItem Title="ファイル">
+                    <MenuFlyoutItem Text="開く" Click="Open_Click"/>
+                    <MenuFlyoutItem Text="終了" Click="Exit_Click"/>
+                </MenuBarItem>
+
+                <MenuBarItem Title="画像変換">
+                    <MenuFlyoutItem Text="2倍に拡大" Click="Enlarge2Times_Click"/>
+                    <MenuFlyoutItem Text="1/2に縮小" Click="Reduce2Times_Click"/>
+                </MenuBarItem>
+
+            </MenuBar>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Image x:Name="_showImage" >
+            </Image>
+        </Grid>
+
+    </Grid>
+
+</Window>
